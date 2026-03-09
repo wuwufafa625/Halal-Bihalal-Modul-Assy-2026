@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halal Bihalal 1447 H — Produksi Modul Assy 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:#C9A84C; --gold-light:#E8CC7A; --gold-pale:#FDF6E3;
+    --emerald:#1A4A3A; --emerald-mid:#2D6B52; --emerald-light:#3D8B6A;
+    --cream:#FAF7F0; --cream-dark:#F0EAD8;
+    --text:#1C1C1C; --text-muted:#6B6B5C; --white:#FFFFFF;
+    --shadow:0 4px 24px rgba(26,74,58,0.10);
+    --shadow-md:0 8px 40px rgba(26,74,58,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--text);}
+
+  /* HEADER */
+  header{
+    background:linear-gradient(160deg,var(--emerald) 0%,var(--emerald-mid) 65%,#2A5C47 100%);
+    position:relative;overflow:hidden;padding:54px 24px 42px;text-align:center;
+  }
+  header::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 15% 50%,rgba(201,168,76,.15) 0%,transparent 55%),
+      radial-gradient(circle at 85% 20%,rgba(201,168,76,.12) 0%,transparent 50%);
+    pointer-events:none;
+  }
+  .orn-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;}
+  .orn-line{width:70px;height:1px;background:linear-gradient(to right,transparent,var(--gold));}
+  .orn-line.r{background:linear-gradient(to left,transparent,var(--gold));}
+  .orn-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);}
+  .arabic{font-family:'Amiri',serif;font-size:clamp(24px,5vw,44px);color:var(--gold-light);letter-spacing:2px;margin-bottom:10px;animation:fadeDown .7s ease both;}
+  header h1{font-family:'Amiri',serif;font-size:clamp(20px,4vw,36px);color:var(--white);font-weight:700;margin-bottom:4px;animation:fadeDown .85s ease .1s both;}
+  .subtitle{font-size:13px;color:rgba(255,255,255,.65);letter-spacing:2.5px;text-transform:uppercase;font-weight:500;margin-bottom:24px;animation:fadeDown 1s ease .2s both;}
+  .hbadges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;animation:fadeDown 1s ease .3s both;}
+  .hbadge{background:rgba(255,255,255,.10);border:1px solid rgba(201,168,76,.40);border-radius:40px;padding:7px 18px;font-size:12px;color:var(--gold-light);display:flex;align-items:center;gap:6px;}
+
+  /* TABS */
+  .tabs{position:sticky;top:0;z-index:100;background:var(--emerald);border-bottom:2px solid var(--gold);display:flex;overflow-x:auto;}
+  .tab{flex:1;min-width:76px;padding:13px 6px;background:none;border:none;color:rgba(255,255,255,.50);font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:.4px;cursor:pointer;transition:all .2s;text-transform:uppercase;position:relative;white-space:nowrap;}
+  .tab::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .2s;}
+  .tab.active{color:var(--gold-light);}
+  .tab.active::after{transform:scaleX(1);}
+  .tab:hover:not(.active){color:rgba(255,255,255,.80);}
+
+  /* SECTIONS */
+  .sec{display:none;animation:fadeIn .35s ease;}
+  .sec.active{display:block;}
+  .cont{max-width:900px;margin:0 auto;padding:30px 18px 60px;}
+
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+
+  /* SEC HEADING */
+  .sh{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+  .sh .ib{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--emerald),var(--emerald-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sh h2{font-size:20px;font-weight:700;color:var(--emerald);}
+  .sh p{font-size:13px;color:var(--text-muted);margin-top:2px;}
+
+  /* PJ BANNER */
+  .pj-banner{
+    background:linear-gradient(135deg,var(--emerald),var(--emerald-light));
+    border-radius:16px;padding:20px 24px;
+    display:flex;align-items:center;gap:16px;
+    margin-bottom:18px;box-shadow:var(--shadow-md);
+  }
+  .pj-av{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+  .pj-lbl{font-size:11px;color:rgba(255,255,255,.60);text-transform:uppercase;letter-spacing:1px;}
+  .pj-name{font-size:18px;font-weight:700;color:var(--white);}
+  .pj-role{font-size:13px;color:var(--gold-light);margin-top:2px;}
+
+  /* LEADER ROW */
+  .leader-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;margin-bottom:20px;}
+  .lc{background:var(--white);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);border-top:3px solid var(--gold);display:flex;align-items:center;gap:13px;}
+  .lc-av{width:42px;height:42px;border-radius:50%;background:var(--gold-pale);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  .lc-role{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;}
+  .lc-name{font-size:14px;font-weight:700;color:var(--text);margin-top:1px;}
+
+  /* SEKSI GRID */
+  .seksi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:13px;}
+  .sk{background:var(--white);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);border-left:4px solid var(--emerald-mid);}
+  .sk-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--emerald);display:flex;align-items:center;gap:7px;margin-bottom:11px;}
+  .sk-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+  .anggota{list-style:none;}
+  .anggota li{display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--text);}
+  .anggota li:last-child{border-bottom:none;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+  /* TIMELINE */
+  .timeline{position:relative;}
+  .timeline::before{content:'';position:absolute;left:64px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),transparent);}
+  .tl{display:flex;margin-bottom:4px;}
+  .tl-time{width:64px;flex-shrink:0;padding:17px 12px 17px 0;text-align:right;font-size:12px;font-weight:700;color:var(--emerald-mid);line-height:1.3;}
+  .tl-dot-col{width:0;position:relative;flex-shrink:0;}
+  .tl-dot{position:absolute;left:-7px;top:20px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:3px solid var(--cream);box-shadow:0 0 0 2px var(--gold);z-index:1;}
+  .tl-card{flex:1;background:var(--white);border-radius:14px;padding:14px 18px;margin-left:20px;margin-bottom:10px;box-shadow:var(--shadow);border-left:3px solid transparent;transition:border-color .2s,box-shadow .2s;}
+  .tl-card:hover{border-left-color:var(--gold);box-shadow:var(--shadow-md);}
+  .tl-card.utama{border-left-color:var(--emerald);background:var(--gold-pale);}
+  .tl-title{font-size:14px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+  .bu{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--emerald);color:var(--gold-light);}
+  .tl-desc{font-size:12px;color:var(--text-muted);line-height:1.6;}
+  .tl-pic{font-size:12px;color:var(--emerald-mid);font-weight:600;margin-top:5px;}
+
+  /* KESIAPAN */
+  .prg-wrap{margin-bottom:20px;}
+  .prg-lbl{display:flex;justify-content:space-between;font-size:13px;color:var(--text-muted);margin-bottom:6px;}
+  .prg-lbl strong{color:var(--emerald);}
+  .prg-bar{height:10px;background:var(--cream-dark);border-radius:99px;overflow:hidden;}
+  .prg-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--emerald),var(--emerald-light));transition:width .5s ease;}
+  .ck-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:13px;}
+  .ck-card{background:var(--white);border-radius:14px;padding:17px;box-shadow:var(--shadow);border-top:3px solid var(--gold);}
+  .ck-card h3{font-size:13px;font-weight:700;color:var(--emerald);margin-bottom:11px;display:flex;align-items:center;gap:7px;}
+  .ci{display:flex;align-items:flex-start;gap:9px;padding:6px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;}
+  .ci:last-child{border-bottom:none;}
+  .cb{width:17px;height:17px;border-radius:5px;flex-shrink:0;margin-top:1px;cursor:pointer;display:flex;align-items:center;justify-content:center;border:2px solid #c8c8b8;transition:all .2s;}
+  .cb.on{background:var(--emerald);border-color:var(--emerald);}
+  .cb.on::after{content:'✓';color:#fff;font-size:10px;font-weight:900;}
+  .cl{flex:1;line-height:1.5;}
+  .cl.done{text-decoration:line-through;color:var(--text-muted);}
+
+  /* INFO */
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:18px;}
+  @media(max-width:540px){.info-grid{grid-template-columns:1fr;}}
+  .ic{background:var(--white);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:flex-start;}
+  .ic-icon{font-size:22px;flex-shrink:0;}
+  .ic h4{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;}
+  .ic p{font-size:14px;font-weight:600;color:var(--text);line-height:1.5;}
+  .note{background:var(--gold-pale);border:1px solid rgba(201,168,76,.35);border-radius:14px;padding:15px 17px;margin-bottom:13px;font-size:14px;line-height:1.7;}
+  .note strong{color:var(--emerald);}
+
+  /* FOOTER */
+  footer{background:var(--emerald);text-align:center;padding:20px;color:rgba(255,255,255,.50);font-size:13px;}
+  footer span{color:var(--gold-light);}
+
+  .print-btn{display:inline-flex;align-items:center;gap:7px;background:var(--emerald);color:var(--gold-light);border:none;border-radius:10px;padding:9px 18px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:20px;transition:background .2s;}
+  .print-btn:hover{background:var(--emerald-light);}
+
+  @media print{
+    .tabs,.print-btn{display:none;}
+    .sec{display:block!important;page-break-before:always;}
+    .sec:first-of-type{page-break-before:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="orn-row">
+    <div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line r"></div>
+  </div>
+  <div class="arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+  <h1>Halal Bihalal 1447 H</h1>
+  <div class="subtitle">Keluarga Besar Produksi Modul Assy &bull; 2026</div>
+  <div class="hbadges">
+    <div class="hbadge">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      SD 2 Getas Pejaten, Jl. Sentot Prawirodirjo No. 984A, Jati – Kudus
+    </div>
+  </div>
+</header>
+
+<!-- TABS -->
+<nav class="tabs">
+  <button class="tab active" onclick="showTab('panitia',this)">👥 Panitia</button>
+  <button class="tab" onclick="showTab('rundown',this)">📋 Rundown</button>
+  <button class="tab" onclick="showTab('kesiapan',this)">✅ Kesiapan</button>
+  <button class="tab" onclick="showTab('info',this)">📝 Info</button>
+</nav>
+
+<!-- ══════════ PANITIA ══════════ -->
+<section id="tab-panitia" class="sec active">
+<div class="cont">
+
+  <div class="sh">
+    <div class="ib"><svg width="22" height="22" fill="none" stroke="#C9A84C" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+    <div><h2>Susunan Panitia</h2><p>Halal Bihalal Keluarga Besar Produksi Modul Assy 2026</p></div>
+  </div>
+
+  <!-- Penanggung Jawab -->
+  <div class="pj-banner">
+    <div class="pj-av">🌟</div>
+    <div>
+      <div class="pj-lbl">Penanggung Jawab</div>
+      <div class="pj-name">Bp. Pargiyanto</div>
+      <div class="pj-role">Penanggung Jawab Kegiatan Halal Bihalal 1447 H / 2026</div>
+    </div>
+  </div>
+
+  <!-- Ketua, Sekretaris, Bendahara -->
+  <div class="leader-row">
+    <div class="lc">
+      <div class="lc-av">👑</div>
+      <div><div class="lc-role">Ketua Panitia</div><div class="lc-name">Bp. Agus Rumanto</div></div>
+    </div>
+    <div class="lc">
+      <div class="lc-av">📝</div>
+      <div><div class="lc-role">Sekretaris</div><div class="lc-name">Fidya &amp; Arvi</div></div>
+    </div>
+    <div class="lc">
+      <div class="lc-av">💰</div>
+      <div><div class="lc-role">Bendahara</div><div class="lc-name">Subiyanti &amp; Sulyani</div></div>
+    </div>
+  </div>
+
+  <!-- Seksi-seksi -->
+  <div class="sh" style="margin-top:6px;">
+    <div class="ib"><svg width="20" height="20" fill="none" stroke="#C9A84C" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+    <div><h2>Seksi-Seksi</h2><p>Pembagian tugas per seksi kepanitiaan</p></div>
+  </div>
+
+  <div class="seksi-grid">
+
+    <div class="sk" style="border-left-color:#e67e22;">
+      <div class="sk-title">
+        <div class="sk-icon" style="background:#fef0e3;">🍱</div>Seksi Konsumsi
+      </div>
+      <ul class="anggota">
+        <li><div class="dot" style="background:#e67e22;"></div>Eli F</li>
+        <li><div class="dot" style="background:#e67e22;"></div>Siti Rofiah</li>
+        <li><div class="dot" style="background:#e67e22;"></div>Dwi Ratna</li>
+        <li><div class="dot" style="background:#e67e22;"></div>Esti</li>
+        <li><div class="dot" style="background:#e67e22;"></div>Rina Ratna Sari</li>
+      </ul>
+    </div>
+
+    <div class="sk" style="border-left-color:#1a7a40;">
+      <div class="sk-title">
+        <div class="sk-icon" style="background:#e8f8ef;">🔧</div>Seksi Perlengkapan &amp; Peralatan
+      </div>
+      <ul class="anggota">
+        <li><div class="dot" style="background:#1a7a40;"></div>Pak Eko</li>
+        <li><div class="dot" style="background:#1a7a40;"></div>Wisnu</li>
+        <li><div class="dot" style="background:#1a7a40;"></div>Opul</li>
+      </ul>
+    </div>
+
+    <div class="sk" style="border-left-color:#1a56db;">
+      <div class="sk-title">
+        <div class="sk-icon" style="background:#e8f0fe;">📸</div>Seksi Dokumentasi
+      </div>
+      <ul class="anggota">
+        <li><div class="dot" style="background:#1a56db;"></div>Pak Rizki</li>
+        <li><div class="dot" style="background:#1a56db;"></div>Fitroh</li>
+        <li><div class="dot" style="background:#1a56db;"></div>Yuli</li>
+      </ul>
+    </div>
+
+    <div class="sk" style="border-left-color:#b91c2a;">
+      <div class="sk-title">
+        <div class="sk-icon" style="background:#fce8ea;">🛡️</div>Seksi Keamanan &amp; Sarana
+      </div>
+      <ul class="anggota">
+        <li><div class="dot" style="background:#b91c2a;"></div>Zaenuri</li>
+        <li><div class="dot" style="background:#b91c2a;"></div>Supri</li>
+        <li><div class="dot" style="background:#b91c2a;"></div>Denis</li>
+        <li><div class="dot" style="background:#b91c2a;"></div>Daffa</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="note" style="margin-top:18px;">
+    <strong>📍 Lokasi Acara:</strong><br>
+    SD 2 Getas Pejaten — Jl. Sentot Prawirodirjo No. 984A, Jati, Kudus
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════ RUNDOWN ══════════ -->
+<section id="tab-rundown" class="sec">
+<div class="cont">
+  <button class="print-btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+
+  <div class="sh">
+    <div class="ib"><svg width="22" height="22" fill="none" stroke="#C9A84C" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+    <div><h2>Rundown Acara</h2><p>Susunan acara — sesuaikan waktu dan pengisi acara sesuai kebutuhan</p></div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl">
+      <div class="tl-time">07.30</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-title">Persiapan Tempat &amp; Dekorasi</div>
+        <div class="tl-desc">Penataan kursi, meja konsumsi, sound system, dan meja registrasi di SD 2 Getas Pejaten.</div>
+        <div class="tl-pic">📌 PJ: Pak Eko, Wisnu, Opul + Zaenuri, Supri, Denis, Daffa</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">08.00</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-title">Registrasi &amp; Penyambutan Tamu</div>
+        <div class="tl-desc">Peserta mengisi daftar hadir dan diarahkan ke tempat duduk. Tersedia snack &amp; minuman ringan.</div>
+        <div class="tl-pic">📌 PJ: Fidya &amp; Arvi (Sekretaris)</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">08.30</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card utama">
+        <div class="tl-title">Pembukaan <span class="bu">Utama</span></div>
+        <div class="tl-desc">MC membuka acara, menyampaikan agenda, dan bacaan Basmallah bersama.</div>
+        <div class="tl-pic">📌 MC: — (isi nama)</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">08.40</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-title">Tilawah Al-Qur'an</div>
+        <div class="tl-desc">Pembacaan ayat suci Al-Qur'an oleh qori yang ditunjuk.</div>
+        <div class="tl-pic">📌 Qori: — (isi nama)</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">08.50</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-title">Sambutan Penanggung Jawab</div>
+        <div class="tl-desc">Sambutan resmi dan ucapan selamat datang. Durasi ±7 menit.</div>
+        <div class="tl-pic">📌 Bp. Pargiyanto</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">09.00</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-title">Sambutan Ketua Panitia</div>
+        <div class="tl-desc">Latar belakang kegiatan halal bihalal. Durasi ±5 menit.</div>
+        <div class="tl-pic">📌 Bp. Agus Rumanto</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">09.10</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card utama">
+        <div class="tl-title">Tausyiah / Ceramah Singkat <span class="bu">Utama</span></div>
+        <div class="tl-desc">Pengajian singkat bertema silaturahmi dan keberkahan Idul Fitri. Durasi ±30 menit.</div>
+        <div class="tl-pic">📌 Penceramah: — (isi nama)</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">09.45</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card utama">
+        <div class="tl-title">Saling Bermaaf-maafan &amp; Salam-salaman <span class="bu">Utama</span></div>
+        <div class="tl-desc">Seluruh peserta berdiri dan saling bersalaman dimulai dari Bp. Pargiyanto, dilanjutkan seluruh hadirin.</div>
+        <div class="tl-pic">📌 PJ: MC + Bp. Agus Rumanto</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">10.15</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card utama">
+        <div class="tl-title">Makan Bersama &amp; Ramah Tamah <span class="bu">Utama</span></div>
+        <div class="tl-desc">Makan siang bersama sambil ngobrol santai. Tim konsumsi memastikan semua tamu terlayani.</div>
+        <div class="tl-pic">📌 PJ: Eli F, Siti Rofiah, Dwi Ratna, Esti, Rina Ratna Sari</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">11.15</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-title">Do'a Penutup</div>
+        <div class="tl-desc">Pembacaan do'a penutup oleh tokoh agama.</div>
+        <div class="tl-pic">📌 — (isi nama)</div>
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-time">11.30</div>
+      <div class="tl-dot-col"><div class="tl-dot"></div></div>
+      <div class="tl-card">
+        <div class="tl-title">Penutupan &amp; Beres-beres</div>
+        <div class="tl-desc">MC menutup acara secara resmi. Seluruh panitia membantu membereskan lokasi acara.</div>
+        <div class="tl-pic">📌 Seluruh Panitia</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ══════════ KESIAPAN ══════════ -->
+<section id="tab-kesiapan" class="sec">
+<div class="cont">
+
+  <div class="sh">
+    <div class="ib"><svg width="22" height="22" fill="none" stroke="#C9A84C" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+    <div><h2>Checklist Kesiapan</h2><p>Centang setiap item yang sudah selesai dipersiapkan</p></div>
+  </div>
+
+  <div class="prg-wrap">
+    <div class="prg-lbl"><span>Progress Keseluruhan</span><strong id="prg-txt">0 / 0</strong></div>
+    <div class="prg-bar"><div class="prg-fill" id="prg-fill" style="width:0%"></div></div>
+  </div>
+
+  <div class="ck-grid">
+
+    <div class="ck-card">
+      <h3>🍱 Konsumsi</h3>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Tentukan jumlah porsi makan</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Pesan katering / koordinasi masak bersama</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Konfirmasi menu makanan</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Siapkan snack / jajanan penyambutan</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Siapkan minuman (air mineral, teh, sirup)</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Siapkan peralatan makan (piring, sendok, dll)</div></div>
+    </div>
+
+    <div class="ck-card">
+      <h3>🔧 Perlengkapan &amp; Peralatan</h3>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Booking / siapkan sound system &amp; mic</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Uji coba sound system (H-1)</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Siapkan kursi dan meja sesuai jumlah tamu</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Pasang backdrop / spanduk ucapan</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Siapkan meja registrasi &amp; alat tulis</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Pastikan ketersediaan listrik &amp; kabel</div></div>
+    </div>
+
+    <div class="ck-card">
+      <h3>📸 Dokumentasi</h3>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Pastikan kamera / HP terisi daya penuh</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Siapkan memori / storage yang cukup</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Foto sesi pembukaan &amp; sambutan</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Foto sesi salam-salaman &amp; makan bersama</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Upload / bagikan dokumentasi pasca acara</div></div>
+    </div>
+
+    <div class="ck-card">
+      <h3>🛡️ Keamanan &amp; Sarana</h3>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Pastikan area parkir tertata rapi</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Siapkan tanda pengarah parkir</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Koordinasi keamanan selama acara berlangsung</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Siapkan P3K / kotak obat</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Bersih-bersih lokasi pasca acara</div></div>
+    </div>
+
+    <div class="ck-card">
+      <h3>📋 Administrasi &amp; Acara</h3>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Buat &amp; distribusikan undangan</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Cetak daftar hadir &amp; name tag</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Konfirmasi MC dan pengisi acara</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Konfirmasi penceramah / tausyiah</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Briefing seluruh panitia (H-1)</div></div>
+      <div class="ci"><div class="cb" onclick="tc(this)"></div><div class="cl">Rekap perkiraan jumlah peserta hadir</div></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ══════════ INFO ══════════ -->
+<section id="tab-info" class="sec">
+<div class="cont">
+
+  <div class="sh">
+    <div class="ib"><svg width="22" height="22" fill="none" stroke="#C9A84C" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <div><h2>Informasi Acara</h2><p>Detail lokasi, penyelenggara, dan catatan penting</p></div>
+  </div>
+
+  <div class="info-grid">
+    <div class="ic"><div class="ic-icon">📅</div><div><h4>Tahun</h4><p>2026 / 1447 H</p></div></div>
+    <div class="ic"><div class="ic-icon">🏫</div><div><h4>Lokasi</h4><p>SD 2 Getas Pejaten</p></div></div>
+    <div class="ic"><div class="ic-icon">📍</div><div><h4>Alamat</h4><p>Jl. Sentot Prawirodirjo No. 984A, Jati, Kudus</p></div></div>
+    <div class="ic"><div class="ic-icon">🏭</div><div><h4>Penyelenggara</h4><p>Keluarga Besar Produksi Modul Assy</p></div></div>
+    <div class="ic"><div class="ic-icon">🌟</div><div><h4>Penanggung Jawab</h4><p>Bp. Pargiyanto</p></div></div>
+    <div class="ic"><div class="ic-icon">👑</div><div><h4>Ketua Panitia</h4><p>Bp. Agus Rumanto</p></div></div>
+  </div>
+
+  <div class="note">
+    <strong>🕌 Tema Acara:</strong><br>
+    <em>"Minal Aidin wal Faizin — Mempererat Ukhuwah Keluarga Besar Produksi Modul Assy"</em>
+  </div>
+
+  <div class="note">
+    <strong>📌 Catatan Koordinasi Panitia:</strong><br>
+    Seluruh panitia diharapkan hadir <strong>minimal 1 jam sebelum acara</strong> untuk persiapan. Pastikan grup WhatsApp panitia aktif mulai H-3 hingga H+1 acara. Rapat koordinasi terakhir dilaksanakan H-2 sebelum pelaksanaan.
+  </div>
+
+  <div class="note">
+    <strong>💰 Anggaran:</strong><br>
+    Rencana anggaran dikoordinasikan oleh Bendahara <strong>Subiyanti &amp; Sulyani</strong>. Item utama meliputi: konsumsi, perlengkapan &amp; dekorasi, dokumentasi, dan biaya tak terduga.
+  </div>
+
+  <div class="note">
+    <strong>📞 Kontak Panitia:</strong><br>
+    Ketua: <strong>Bp. Agus Rumanto</strong> &nbsp;·&nbsp;
+    Sekretaris: <strong>Fidya / Arvi</strong> &nbsp;·&nbsp;
+    Bendahara: <strong>Subiyanti / Sulyani</strong>
+  </div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Halal Bihalal 1447 H &mdash; <span>Keluarga Besar Produksi Modul Assy 2026</span><br>
+  SD 2 Getas Pejaten, Jl. Sentot Prawirodirjo No. 984A, Jati – Kudus
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.sec').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function tc(el) {
+    el.classList.toggle('on');
+    const lbl = el.parentElement.querySelector('.cl');
+    if (lbl) lbl.classList.toggle('done', el.classList.contains('on'));
+    updatePrg();
+  }
+
+  function updatePrg() {
+    const all = document.querySelectorAll('.cb');
+    const done = document.querySelectorAll('.cb.on');
+    const pct = all.length ? Math.round(done.length / all.length * 100) : 0;
+    document.getElementById('prg-fill').style.width = pct + '%';
+    document.getElementById('prg-txt').textContent = done.length + ' / ' + all.length;
+  }
+
+  updatePrg();
+</script>
+</body>
+</html>
