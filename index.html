@@ -140,9 +140,13 @@
 
   .peserta-section{margin-bottom:24px;}
   .peserta-section h3{font-size:14px;font-weight:700;color:var(--emerald);margin-bottom:12px;padding:8px 14px;background:var(--gold-pale);border-radius:10px;border-left:3px solid var(--gold);}
-  .peserta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;}
-  .p-card{background:var(--white);border-radius:10px;padding:10px 13px;box-shadow:var(--shadow);font-size:13px;font-weight:600;}
-  .p-num{width:26px;height:26px;border-radius:50%;background:var(--emerald);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+  .peserta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
+  .p-card{background:var(--white);border-radius:10px;padding:9px 13px;box-shadow:var(--shadow);font-size:12px;font-weight:600;}
+  .p-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:5px;border-bottom:1px solid var(--cream-dark);padding-bottom:4px;}
+  .p-detail{display:flex;gap:8px;flex-wrap:wrap;}
+  .p-badge{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;}
+  .p-dewasa{background:var(--gold-pale);color:var(--emerald);border:1px solid var(--gold);}
+  .p-anak{background:#e8f4ff;color:#1a5fa0;border:1px solid #90c8f0;}
 
   /* INFO */
   .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:18px;}
@@ -192,6 +196,7 @@
   <button class="tab" onclick="showTab('kesiapan',this)">✅ Kesiapan</button>
   <button class="tab" onclick="showTab('keuangan',this)">💰 Keuangan</button>
   <button class="tab" onclick="showTab('peserta',this)">🤝 Peserta</button>
+  <button class="tab" onclick="showTab('doorprize',this)">🎁 Doorprize</button>
   <button class="tab" onclick="showTab('info',this)">📝 Info</button>
 </nav>
 
@@ -456,15 +461,15 @@
   <div class="summary-keu">
     <div class="keu-chip keu-masuk">
       <div class="keu-lbl">💵 Uang Masuk</div>
-      <div class="keu-val">Rp 10.920.000</div>
+      <div class="keu-val">Rp 12.220.000</div>
     </div>
     <div class="keu-chip keu-keluar">
       <div class="keu-lbl">📤 Uang Keluar</div>
-      <div class="keu-val">Rp 9.920.000</div>
+      <div class="keu-val">Rp 10.720.000</div>
     </div>
     <div class="keu-chip keu-saldo">
       <div class="keu-lbl">✅ Sisa Saldo</div>
-      <div class="keu-val">Rp 1.000.000</div>
+      <div class="keu-val">Rp 1.500.000</div>
     </div>
   </div>
 
@@ -492,17 +497,19 @@
       <tr><td>12</td><td>Banner</td><td class="right">Rp 90.000</td><td>—</td></tr>
       <tr><td>13</td><td>Gladi Bersih</td><td class="right">Rp 200.000</td><td>—</td></tr>
       <tr><td>14</td><td>Door Prize Tarik Uang</td><td class="right">Rp 650.000</td><td>—</td></tr>
-      <tr><td>15</td><td>Door Prize Barang</td><td class="right">Rp 500.000</td><td>—</td></tr>
-      <tr><td>16</td><td>Plastik Kresek</td><td class="right">Rp 40.000</td><td>—</td></tr>
+      <tr><td>15</td><td>Door Prize Barang</td><td class="right">Rp 900.000</td><td>—</td></tr>
+      <tr><td>16</td><td>Sewa Camera</td><td class="right">Rp 100.000</td><td>—</td></tr>
+      <tr><td>17</td><td>Banner Photo Booth</td><td class="right">Rp 300.000</td><td>—</td></tr>
+      <tr><td>18</td><td>Plastik Kresek</td><td class="right">Rp 40.000</td><td>—</td></tr>
     </tbody>
     <tfoot>
-      <tr><td colspan="2"><strong>TOTAL PENGELUARAN</strong></td><td class="right"><strong>Rp 9.920.000</strong></td><td></td></tr>
+      <tr><td colspan="2"><strong>TOTAL PENGELUARAN</strong></td><td class="right"><strong>Rp 10.720.000</strong></td><td></td></tr>
     </tfoot>
   </table>
 
   <div class="note">
     <strong>📊 Catatan Bendahara:</strong><br>
-    Uang Masuk <strong>Rp 10.920.000</strong> — Uang Keluar <strong>Rp 9.920.000</strong> — Sisa Saldo <strong style="color:#1a7a40;">Rp 1.000.000</strong><br>
+    Uang Masuk <strong>Rp 12.220.000</strong> — Uang Keluar <strong>Rp 10.720.000</strong> — Sisa Saldo <strong style="color:#1a7a40;">Rp 1.500.000</strong><br>
     Dikelola oleh: <strong>SUBIYANTI &amp; SULYANI</strong>
   </div>
 </div>
@@ -517,9 +524,9 @@
   </div>
 
   <div class="peserta-stats">
-    <div class="ps-chip"><div class="ps-num">200</div><div class="ps-lbl">👨‍👩‍👧 Peserta Dewasa</div></div>
-    <div class="ps-chip"><div class="ps-num">50</div><div class="ps-lbl">👧 Anak-anak</div></div>
-    <div class="ps-chip"><div class="ps-num">250</div><div class="ps-lbl">🎉 Total Peserta</div></div>
+    <div class="ps-chip"><div class="ps-num">197</div><div class="ps-lbl">👨‍👩‍👧 Peserta Dewasa</div></div>
+    <div class="ps-chip"><div class="ps-num">40</div><div class="ps-lbl">👧 Anak-anak</div></div>
+    <div class="ps-chip"><div class="ps-num">237</div><div class="ps-lbl">🎉 Total Keseluruhan</div></div>
   </div>
 
   <div class="peserta-section">
@@ -527,14 +534,71 @@
     <div class="peserta-grid" id="grid-dewasa"></div>
   </div>
 
-  <div class="peserta-section">
-    <h3>👧 Anak-anak — 50 Orang</h3>
-    <p style="font-size:13px;color:var(--text-muted);padding:10px 0;">Data nama anak-anak menyusul — koordinasi dengan sekretaris.</p>
+  <div class="note">
+    <strong>📝 Catatan:</strong> Hubungi Sekretaris <strong>FIDYA TRIANA PUTRI</strong> atau <strong>ARVINATALISA KHAILA HAQSA</strong> untuk update daftar peserta.
+  </div>
+</div>
+</section>
+
+<!-- ══════════ DOORPRIZE ══════════ -->
+<section id="tab-doorprize" class="sec">
+<div class="cont">
+  <div class="sh">
+    <div class="ib"><svg width="22" height="22" fill="none" stroke="#C9A84C" stroke-width="2" viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div>
+    <div><h2>Doorprize</h2><p>Rincian doorprize tarikan uang, barang, dan donasi</p></div>
   </div>
 
-  <div class="note">
-    <strong>📝 Catatan:</strong> Nama peserta dapat diisi/diperbarui sesuai data absensi. Hubungi Sekretaris <strong>FIDYA TRIANA PUTRI</strong> atau <strong>ARVINATALISA KHAILA HAQSA</strong> untuk update daftar peserta.
+  <!-- RINGKASAN -->
+  <div class="summary-keu" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px;">
+    <div class="keu-chip keu-masuk"><div class="keu-lbl">💵 Tarikan Uang</div><div class="keu-val">Rp 650.000</div></div>
+    <div class="keu-chip" style="background:#fff3cd;border:2px solid #e0b020;"><div class="keu-lbl" style="color:#7a5500;">🎁 Barang</div><div class="keu-val" style="color:#a06000;">Rp 900.000</div></div>
+    <div class="keu-chip keu-saldo"><div class="keu-lbl">🤝 Donasi Peserta</div><div class="keu-val">Menyusul</div></div>
   </div>
+
+  <!-- DOORPRIZE TARIKAN UANG -->
+  <div class="peserta-section">
+    <h3>💵 Doorprize Tarikan Uang — Rp 650.000 (48 Lembar)</h3>
+    <table class="keu-table" style="margin-top:10px;">
+      <thead><tr>
+        <th>Nominal</th>
+        <th class="right">Lembar</th>
+        <th class="right">Total</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Rp 100.000</td><td class="right">1</td><td class="right">Rp 100.000</td></tr>
+        <tr><td>Rp 50.000</td><td class="right">2</td><td class="right">Rp 100.000</td></tr>
+        <tr><td>Rp 20.000</td><td class="right">10</td><td class="right">Rp 200.000</td></tr>
+        <tr><td>Rp 10.000</td><td class="right">15</td><td class="right">Rp 150.000</td></tr>
+        <tr><td>Rp 5.000</td><td class="right">20</td><td class="right">Rp 100.000</td></tr>
+      </tbody>
+      <tfoot><tr>
+        <td><strong>TOTAL</strong></td>
+        <td class="right"><strong>48 lembar</strong></td>
+        <td class="right"><strong>Rp 650.000</strong></td>
+      </tr></tfoot>
+    </table>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">📌 PJ: LISMAWATI, NUR FAIZAH, NINIK RISTIANI</p>
+  </div>
+
+  <!-- DOORPRIZE BARANG -->
+  <div class="peserta-section">
+    <h3>🎁 Doorprize Barang — Rp 900.000</h3>
+    <div class="note" style="margin-top:10px;">
+      <strong>📝 Rincian barang menyusul</strong> — koordinasi dengan Bendahara <strong>SUBIYANTI / SULYANI</strong> dan Seksi Acara <strong>BP. WIYONO</strong>.<br>
+      <span style="font-size:12px;color:var(--text-muted);">Update data sebelum H-3 acara (26 Maret 2026).</span>
+    </div>
+  </div>
+
+  <!-- DOORPRIZE DONASI -->
+  <div class="peserta-section">
+    <h3>🤝 Doorprize Donasi Peserta</h3>
+    <div class="note" style="margin-top:10px;">
+      <strong>📝 Data donasi dari peserta menyusul</strong> — dikumpulkan saat registrasi oleh Sekretaris.<br>
+      <span style="font-size:12px;color:var(--text-muted);">Donasi bersifat sukarela dari peserta halal bihalal.</span>
+    </div>
+    <div id="donasi-list" style="margin-top:12px;"></div>
+  </div>
+
 </div>
 </section>
 
@@ -552,8 +616,8 @@
     <div class="ic"><div class="ic-icon">🏭</div><div><h4>Penyelenggara</h4><p>Keluarga Besar Produksi Modul Assy</p></div></div>
     <div class="ic"><div class="ic-icon">🌟</div><div><h4>Penanggung Jawab</h4><p>BP. PARGIYANTO</p></div></div>
     <div class="ic"><div class="ic-icon">👑</div><div><h4>Ketua Panitia</h4><p>BP. AGUS RUMANTO</p></div></div>
-    <div class="ic"><div class="ic-icon">👨‍👩‍👧</div><div><h4>Total Peserta</h4><p>200 Dewasa + 50 Anak = 250 Orang</p></div></div>
-    <div class="ic"><div class="ic-icon">💰</div><div><h4>Sisa Saldo</h4><p style="color:#1a7a40;">Rp 1.000.000</p></div></div>
+    <div class="ic"><div class="ic-icon">👨‍👩‍👧</div><div><h4>Total Peserta</h4><p>197 Dewasa + 40 Anak = 237 Orang</p></div></div>
+    <div class="ic"><div class="ic-icon">💰</div><div><h4>Sisa Saldo</h4><p style="color:#1a7a40;">Rp 1.500.000</p></div></div>
   </div>
   <div class="note">
     <strong>🕌 Tema Acara:</strong><br>
@@ -603,52 +667,68 @@
   }
   updatePrg();
 
-  // Daftar peserta lengkap — diurutkan abjad
+  // Daftar peserta [nama, dewasa, anak] — diurutkan abjad
   const semuaPeserta = [
-    "AGUS RUMANTO","AHMAD AGUS BACHTIAR","AINA FIHA SALSABILA","AISHA NABILA PARAMITHA",
-    "AKHMAD NUR RIZQI","ALIFIA RAHMA PUTRI ANDINI","ALVINA ZETA AYUNDA","AMELIA EKA PUTRIANI",
-    "AMELIA TRIA SAPUTRI","ANI SUCIATI","ANINDA AULIA SAFITRI","ANIS NOOR AIDA",
-    "ANISA DIVIA ANAM","ANNISA NURUL HIDAYAH","ARGANITA CAHYANI","ARVINATALISA KHAILA HAQSA",
-    "ARY FIRDAUS","BETI LIA SASTI","BUWONO","CATUR YULIYANI",
-    "CHANIF TAUFIQILLAH","DARSIH ISWATI","DEANITA PERMATA SARI","DENNIS TEGAR ARNANTA",
-    "DESIKA NURUL AFIFAH","DEVI PRANESWARI","DIAH AYU KHOIRIN NIDA","DILLA ANGGITA DAMARANI",
-    "DITA FACHRUNISA","DWI PUTRI WULANSARI","DWI RATNA ARIYANI","DWI RATNA SARI",
-    "DWI RIZKA MEILANI","EKA FANI HANIDA RAHMADHANI","EKA SEPHIA RAMANDANI","EKO SANTOSO",
-    "ELI FITRIANASARI","ELSA WINDIAN PUITRI","ELVINA AMALIA","EMA DWI ARYANTI",
-    "EMI RAKHMAWATI","ENDANG LARASATI","ESA LARAS ADICHANDRA","ESTI SUSILOWATI",
-    "EVA KHOLIFIANA","FARAH VINKA SABRINA","FARIDA ROCHMAH","FATICHAH KHOIRUL NI'MAH",
-    "FIDYA TRIANA PUTRI","FERINA","FIRSTA KHOIRUN NISA'","FITROTUS SA'ADAH","HARYUNI",
-    "HAZILINA AIDILA SAFITRI","HENI RISTIYANTI","IDA NOOR CHAMIDAH","IMAM CHANAFI",
-    "INDAH SUSILOWATI","IRFANI FARRAS ZAKI","ISTIANAH","IZZATIN NISA'AZZAHRO",
-    "JEM'MIATI","JIHAN SAGITA","JIHANIA FITRIANI","JOHAN ARIS SANTO",
-    "KEYSHIA ANANDHITA","KHOIRUL UMAMI","LILIS NURUL FARIDA","LISMAWATI",
-    "LUTFIYAH MAHARANI","LUTTFI ANNADDOROH","M. KHOIRUL HUDA","M. ZAENURI",
-    "MADEKAN","MAULIDA FEBI ANGGRAINI","MUHAMAD DAVA WARDANA","MUHAMMAD ABDUL ROZAQ",
-    "MUHAMMAD ARENDRA BAGUS S","MUHAMMAD CHOIRUL ANAM","MUHAMMAD ROMI DIAZ TRIADY","MUHAMMAD SYAROFUL ANAM",
-    "NABILAH KHOIRIYAH","NAFIS SAFITRI","NAILI MAHBUBAH","NANA ARIYANI",
-    "NENY ARIYANI","NESYA FATIKA FARIANA","NGAPINI","NINIK RISTIANI",
-    "NOOR ALIYAH","NOOR ROCHMAT","NOOR WAHYUNI","NOVITA IMELYA PRASTYO",
-    "NUR AFLIA INDRIYANI","NUR FAIZAH","NURUL IDA","NUZUL WIJAYATI",
-    "NUZULUL AFIFAH","PARGIYANTO","PIPIT AFITTONICO RIO","PRIYANTO",
-    "RACHMAWATI","RANI LUTFIKA","RIMA SARASWATI","RINA RATNASARI",
-    "RISKA RAHMAWATI","RISMAWATI","RIZKA AYU CAHYANI","RIZKA OKTAVIANI",
-    "ROCHMAH PUJI ASTUTI","SHOLIHUL ARIFIN","SILFIA FATMAWATI","SITI ROPI'AH",
-    "SRI AWANTI","SRI MULYATI","SRI MURWATI","SRI PRIHATIN",
-    "SUBIYANTI","SULISTIYOWATI","SULYANI","SUMIYATI",
-    "SUNARTI","SUPATMI","SUPRIYANTO","SUSANTI","SUSANTI (2)",
-    "SYAFRIZAL FAJAR MAULANA","TRI WAHYUNINGSIH","TRIANA RAHMAWATI","TURIPAH",
-    "TUTIK LESTARI","ULFA TSANIA RAHMA","UNIK KUSUMASTUTI","VIA MAGHDALENA",
-    "WATRI LULUTIKA","WIDI ASTUTI","WIDI TRIASTUTI","WIHDA RIZQINA IZZATUL ULYA",
-    "WISNU ARDIANSYAH","WIYONO","YUKE VALENTIKA","YULI KRISTIYANTI",
-    "YULIANTI","ZOUFA TAFTAZIA","ZULIA PURWATI","ZULIANA ARISTIANI"
-  ];
+    ["PAK AGUS RUMANTO",2,0],["AHMAD AGUS BACHTIAR",1,0],["AINA FIHA SALSABILA",1,0],
+    ["AISHA NABILA PARAMITHA",1,0],["PAK AKHMAD NUR RIZQI",2,2],["ALIFIA RAHMA PUTRI ANDINI",1,0],
+    ["ALVINA ZETA AYUNDA",1,0],["AMELIA EKA PUTRIANI",1,0],["AMELIA TRIA SAPUTRI",1,0],
+    ["ANI SUCIATI",1,0],["ANINDA AULIA SAFITRI",1,0],["ANIS NOOR AIDA",1,0],
+    ["ANISA DIVIA ANAM",1,0],["ANNISA NURUL HIDAYAH",1,0],["ARGANITA CAHYANI",1,0],
+    ["ARVINATALISA KHAILA HAQSA",1,0],["ARY FIRDAUS",2,3],["BETI LIA SASTI",1,0],
+    ["BUWONO",1,0],["CATUR YULIYANI",1,0],["CHANIF TAUFIQILLAH",1,0],
+    ["DARSIH ISWATI",2,0],["DEANITA PERMATA SARI",1,0],["DENNIS TEGAR ARNANTA",1,0],
+    ["DESIKA NURUL AFIFAH",1,0],["DEVI PRANESWARI",1,0],["DIAH AYU KHOIRIN NIDA",1,0],
+    ["DILLA ANGGITA DAMARANI",1,0],["DITA FACHRUNISA",1,0],["DWI PUTRI WULANSARI",1,0],
+    ["DWI RATNA ARIYANI",2,2],["DWI RATNA SARI",1,1],["DWI RIZKA MEILANI",1,0],
+    ["EKA FANI HANIDA RAHMADHANI",1,0],["EKA SEPHIA RAMANDANI",1,0],["PAK EKO SANTOSO",2,2],
+    ["ELI FITRIANASARI",1,1],["ELSA WINDIAN PUITRI",1,0],["ELVINA AMALIA",1,0],
+    ["EMA DWI ARYANTI",1,0],["EMI RAKHMAWATI",1,0],["ENDANG LARASATI",1,0],
+    ["ESA LARAS ADICHANDRA",1,0],["ESTI SUSILOWATI",2,1],["EVA KHOLIFIANA",1,0],
+    ["FARAH VINKA SABRINA",1,0],["FARIDA ROCHMAH",2,0],["FATICHAH KHOIRUL NI'MAH",1,0],
+    ["FERINA",1,0],["FIDYA TRIANA PUTRI",1,0],["FIRSTA KHOIRUN NISA'",1,0],
+    ["FITROTUS SA'ADAH",1,0],["HARYUNI",2,1],["HAZILINA AIDILA SAFITRI",1,0],
+    ["HENI RISTIYANTI",2,1],["IDA NOOR CHAMIDAH",1,0],["IMAM CHANAFI",1,0],
+    ["INDAH SUSILOWATI",1,0],["IRFANI FARRAS ZAKI",1,0],["ISTIANAH",1,0],
+    ["IZZATIN NISA'AZZAHRO",1,0],["JEM'MIATI",1,0],["JIHAN SAGITA",1,0],
+    ["JIHANIA FITRIANI",1,0],["JOHAN ARIS SANTO",1,0],["KEYSHIA ANANDHITA",1,0],
+    ["KHOIRUL UMAMI",2,0],["LILIS NURUL FARIDA",1,0],["LISMAWATI",2,1],
+    ["LUTFIYAH MAHARANI",1,0],["LUTTFI ANNADDOROH",2,1],["M. KHOIRUL HUDA",2,1],
+    ["M. ZAENURI",1,0],["MADEKAN",1,0],["MAULIDA FEBI ANGGRAINI",1,0],
+    ["MUHAMAD DAVA WARDANA",1,0],["MUHAMMAD ABDUL ROZAQ",1,0],["MUHAMMAD ARENDRA BAGUS S",1,0],
+    ["MUHAMMAD CHOIRUL ANAM",1,0],["MUHAMMAD ROMI DIAZ TRIADY",1,0],["MUHAMMAD SYAROFUL ANAM",1,0],
+    ["NABILAH KHOIRIYAH",1,0],["NAFIS SAFITRI",1,0],["NAILI MAHBUBAH",1,0],
+    ["NANA ARIYANI",2,1],["NENY ARIYANI",2,1],["NESYA FATIKA FARIANA",1,0],
+    ["NGAPINI",1,0],["NINIK RISTIANI",2,0],["NOOR ALIYAH",2,1],
+    ["NOOR ROCHMAT",1,0],["NOOR WAHYUNI",2,0],["NOVITA IMELYA PRASTYO",1,0],
+    ["NUR AFLIA INDRIYANI",2,0],["NUR FAIZAH",2,1],["NURUL IDA",2,1],
+    ["NUZUL WIJAYATI",1,0],["NUZULUL AFIFAH",1,0],["PAK PARGIYANTO",2,0],
+    ["PIPIT AFITTONICO RIO",1,0],["PRIYANTO",1,0],["RACHMAWATI",1,0],
+    ["RANI LUTFIKA",1,0],["RIMA SARASWATI",2,1],["RINA RATNASARI",2,2],
+    ["RISKA RAHMAWATI",1,0],["RISMAWATI",1,0],["RIZKA AYU CAHYANI",1,0],
+    ["RIZKA OKTAVIANI",2,0],["ROCHMAH PUJI ASTUTI",2,0],["SHOLIHUL ARIFIN",1,0],
+    ["SILFIA FATMAWATI",1,0],["SITI ROPI'AH",2,0],["SRI AWANTI",1,0],
+    ["SRI MULYATI",2,1],["SRI MURWATI",2,1],["SRI PRIHATIN",1,0],
+    ["SUBIYANTI",2,1],["SULISTIYOWATI",1,0],["SULYANI",2,2],
+    ["SUMIYATI",2,1],["SUNARTI",2,0],["SUPATMI",2,0],
+    ["SUPRIYANTO",2,1],["SUSANTI",2,1],["SUSANTI (2)",2,0],
+    ["SYAFRIZAL FAJAR MAULANA",1,0],["TRI WAHYUNINGSIH",2,0],["PAK TRIYANA (Kepala Bagian)",2,0],["TRIANA RAHMAWATI",2,0],
+    ["TURIPAH",2,1],["TUTIK LESTARI",2,1],["ULFA TSANIA RAHMA",1,0],
+    ["UNIK KUSUMASTUTI",2,0],["VIA MAGHDALENA",1,0],["WATRI LULUTIKA",1,0],
+    ["WIDI ASTUTI",2,0],["WIDI TRIASTUTI",2,2],["WIHDA RIZQINA IZZATUL ULYA",1,0],
+    ["WISNU ARDIANSYAH",1,0],["PAK WIYONO",2,0],["YUKE VALENTIKA",1,0],
+    ["YULI KRISTIYANTI",2,0],["YULIANTI",2,2],["ZOUFA TAFTAZIA",1,0],
+    ["ZULIA PURWATI",1,0],["ZULIANA ARISTIANI",2,1]
+  ].sort((a,b) => a[0].localeCompare(b[0], 'id'));
 
   function renderPeserta(list, containerId) {
     const el = document.getElementById(containerId);
     if (!el) return;
-    el.innerHTML = list.map(n =>
-      `<div class="p-card">${n}</div>`
-    ).join('');
+    el.innerHTML = list.map(([nama, dewasa, anak]) => {
+      const dLabel = dewasa === 2 ? '2 Orang' : '1 Orang';
+      let badges = `<span class="p-badge p-dewasa">${dLabel}</span>`;
+      if (anak > 0) badges += ` <span class="p-badge p-anak">${anak} Anak</span>`;
+      return `<div class="p-card"><div class="p-name">${nama}</div><div class="p-detail">${badges}</div></div>`;
+    }).join('');
   }
 
   renderPeserta(semuaPeserta, 'grid-dewasa');
